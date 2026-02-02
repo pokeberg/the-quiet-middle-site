@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Idiomatics – FAQ</title>
+
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --text: #111;
+      --muted: #666;
+      --rule: #e1dfda;
+      --card: rgba(255, 255, 255, 0.55);
+      --cardBorder: rgba(17, 17, 17, 0.08);
+      --shadow: rgba(17, 17, 17, 0.04);
+      --focus: rgba(17, 17, 17, 0.12);
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    main {
+      max-width: 640px;
+      padding: 64px 20px 96px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 28px;
+    }
+
+    h1 {
+      font-family: "New York", "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      margin: 0 0 8px 0;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .lead {
+      font-size: 16px;
+      margin: 18px 0 0;
+      color: var(--text);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 34px 0;
+    }
+
+    h2 {
+      font-family: "New York", "Times New Roman", serif;
+      font-size: 22px;
+      font-weight: 600;
+      margin: 48px 0 12px;
+    }
+
+    p {
+      font-size: 16px;
+      margin: 0 0 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--cardBorder);
+      border-radius: 16px;
+      padding: 22px 18px;
+      box-shadow: 0 10px 30px var(--shadow);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      text-decoration: none;
+      border: 1px solid var(--cardBorder);
+      color: var(--text);
+      background: rgba(255,255,255,0.45);
+    }
+
+    .btn:hover {
+      background: rgba(255,255,255,0.65);
+    }
+
+    .btn:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    /* FAQ */
+    .faq {
+      margin-top: 22px;
+    }
+
+    .faq h2 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      letter-spacing: -0.02em;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 600;
+    }
+
+    details {
+      border-top: 1px solid var(--rule);
+      padding: 12px 0;
+    }
+
+    details:last-child {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 2px 0;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    /* Chevron */
+    summary::after {
+      content: "▾";
+      color: var(--muted);
+      font-weight: 700;
+      transform: rotate(0deg);
+      transition: transform 160ms ease;
+      flex: 0 0 auto;
+    }
+
+    details[open] summary::after {
+      transform: rotate(180deg);
+    }
+
+    details p, details ul {
+      margin: 10px 0 0;
+      color: var(--text);
+      font-size: 15px;
+    }
+
+    details ul {
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+
+    .note {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+    }
+
+    footer {
+      margin-top: 72px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Idiomatics</h1>
+      <div class="subtitle">FAQ</div>
+      <p class="lead">
+        Need help with Idiomatics? Here are answers to the most common questions.
+      </p>
+
+      <div class="buttons">
+        <!-- Change this email to whatever you use -->
+        <a class="btn" href="mailto:hello@thequietmiddle.co">Email support</a>
+      </div>
+
+      <p class="note">
+        Tip: Including your iOS version, device model, and app version in your email helps a lot.
+      </p>
+    </header>
+
+    <div class="card">
+      <div class="faq">
+        <h2>FAQ</h2>
+
+        <details>
+          <summary>What is Idiomatics?</summary>
+          <p>
+            Idiomatics is a language game about idioms — expressions that don’t mean what they literally say,
+            but reveal how people think, feel, and see the world.
+          </p>
+        </details>
+
+        <details>
+          <summary>Is this a language-learning app?</summary>
+          <p>
+            Not in the traditional sense. There are no grammar drills, no pressure, and no streaks.
+            It’s designed to be curious, playful, and rewarding — whether you play for one minute or a whole session.
+          </p>
+        </details>
+
+        <details>
+          <summary>How does the game work?</summary>
+          <p>
+            You’ll guess the language and meaning of idioms from different parts of the world.
+            Along the way, you’ll also get short explanations and small curiosities to make things stick.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do idioms repeat?</summary>
+          <p>
+            In Journey mode, new levels introduce new idioms. Older idioms are not repeated within Journeys,
+            so progress stays meaningful and fresh.
+          </p>
+        </details>
+
+        <details>
+          <summary>How does scoring work?</summary>
+          <p>
+            Points are awarded for correct answers (language and meaning). Some rounds apply a multiplier that boosts your score.
+            Scores are meant to be fun — not a measure of intelligence or fluency.
+          </p>
+        </details>
+
+        <details>
+          <summary>What is the multiplier?</summary>
+          <p>
+            The multiplier increases your score in some rounds, rewarding progress and strong play.
+            It’s designed to feel satisfying without punishing mistakes.
+          </p>
+        </details>
+
+        <details>
+          <summary>What are Journey, Daily, and Nightmare?</summary>
+          <p>
+            <strong>Journey</strong> is the main mode: themed levels and languages.
+            <br />
+            <strong>Daily</strong> (coming soon) is planned as one small challenge per day.
+            <br />
+            <strong>Nightmare</strong> (coming soon) is planned as a tougher mode for experienced players.
+          </p>
+        </details>
+
+        <details>
+          <summary>When will Daily and Nightmare be available?</summary>
+          <p>
+            The current plan is Northern Hemisphere summer 2026.
+            These features are planned, but not guaranteed to be released by a specific date — or at all.
+          </p>
+        </details>
+
+        <details>
+          <summary>How much does Idiomatics cost?</summary>
+          <p>
+            Idiomatics is a one-time paid app.
+          </p>
+          <ul>
+            <li>Regular price: <strong>€1.99</strong></li>
+            <li>Launch price: <strong>€0.99</strong> (until March 1)</li>
+          </ul>
+          <p>
+            There are no subscriptions and no in-app purchases.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do you collect personal data?</summary>
+          <p>
+            No. Idiomatics does not collect, store, or sell personal data.
+            No third-party ads, analytics, or tracking SDKs are used.
+          </p>
+        </details>
+
+        <details>
+          <summary>What data is shared with Apple / Game Center?</summary>
+          <p>
+            If you enable Game Center, scores may be submitted to Apple’s Game Center services for leaderboards,
+            according to Apple’s own privacy policies and settings.
+          </p>
+          <p>
+            All other progress and preferences are stored locally on your device.
+          </p>
+        </details>
+
+        <details>
+          <summary>Do I need an account?</summary>
+          <p>
+            No account is required to play. If you use Game Center, that is handled through your Apple ID settings.
+          </p>
+        </details>
+
+        <details>
+          <summary>Will there be more idioms, languages, or levels?</summary>
+          <p>
+            That’s the goal. Idiomatics is built to grow over time with more journeys, idioms, and languages —
+            at a sustainable pace.
+          </p>
+        </details>
+
+        <details>
+          <summary>How can I send feedback?</summary>
+          <p>
+            Use the email link above. Thoughtful feedback is always welcome — especially small notes about clarity,
+            difficulty, or any idioms that feel off.
+          </p>
+        </details>
+      </div>
+    </div>
+
+    <footer>
+      © 2026 The Quiet Middle
+    </footer>
+  </main>
+</body>
+</html>
