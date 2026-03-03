@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Idiomatics – A language game about idioms</title>
+  <meta name="description" content="Guess idioms from over 60 languages. Three modes, hundreds of expressions, one curiosity at a time." />
+
+  <style>
+    :root {
+      --bg: #f7f6f3;
+      --text: #111;
+      --muted: #666;
+      --rule: #e1dfda;
+      --card: #fff;
+      --card-border: #e8e5df;
+      --accent: #c0a87a;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+                   "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* ── Top nav ── */
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 32px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .brand {
+      font-family: "New York", "Times New Roman", serif;
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+
+    .nav {
+      display: flex;
+      gap: 24px;
+    }
+
+    .nav a {
+      font-size: 14px;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .nav a:hover {
+      color: var(--text);
+    }
+
+    /* ── Layout ── */
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 64px 20px 96px;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 36px 40px;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "New York", "Times New Roman", serif;
+      font-size: 40px;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0 0 16px;
+      line-height: 1.2;
+    }
+
+    .lead {
+      font-size: 17px;
+      color: var(--muted);
+      margin: 0 0 32px;
+      max-width: 520px;
+    }
+
+    /* ── App Store button ── */
+    .appstore {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--text);
+      color: #fff;
+      text-decoration: none;
+      padding: 11px 20px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      transition: opacity 0.15s;
+    }
+
+    .appstore:hover {
+      opacity: 0.8;
+    }
+
+    .appstore svg {
+      flex-shrink: 0;
+    }
+
+    .appstore-label {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .appstore-small {
+      font-size: 10px;
+      font-weight: 400;
+      opacity: 0.75;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .appstore-big {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    /* ── Feature grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .grid .card {
+      padding: 28px 28px 24px;
+    }
+
+    .grid .card h2 {
+      font-family: "New York", "Times New Roman", serif;
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0 0 8px;
+      letter-spacing: -0.01em;
+    }
+
+    .grid .card p {
+      font-size: 14px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: #faf5ec;
+      border: 1px solid #e8dcc8;
+      border-radius: 5px;
+      padding: 2px 7px;
+      margin-bottom: 10px;
+    }
+
+    /* Wide cards (full-row) */
+    .col-2 {
+      grid-column: span 2;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      margin-top: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 580px) {
+      .top {
+        padding: 16px 20px;
+      }
+
+      .hero h1 {
+        font-size: 30px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .col-2 {
+        grid-column: span 1;
+      }
+
+      .footer {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <div class="brand">Idiomatics</div>
+    <nav class="nav">
+      <a href="/idiomatics/">Home</a>
+      <a href="/idiomatics/privacy/">Privacy</a>
+      <a href="/idiomatics/support/">Support</a>
+      <a href="/idiomatics/terms/">Terms</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+
+    <!-- Hero -->
+    <section class="card hero">
+      <h1>A language game about idioms.</h1>
+      <p class="lead">
+        Guess idioms from over 60 languages. Explore how cultures encode
+        meaning in metaphor — one expression at a time.
+      </p>
+        <div class="buttons">
+       <a class="appstore" href="https://apps.apple.com/fi/app/idiomatics/id6757863018" aria-label="Download Rizu on the App Store">
+  <img src="/rizu/assets/appstore-badge.svg" alt="Download on the App Store" />
+</a>
+    </section>
+
+    <!-- Game modes -->
+    <section class="grid" id="modes">
+
+      <div class="card">
+        <div class="tag">Available now</div>
+        <h2>Journey</h2>
+        <p>Work through hundreds of idioms at your own pace, one language at a time.</p>
+      </div>
+
+      <div class="card">
+        <div class="tag">March 20, 2026</div>
+        <h2>Nightmare</h2>
+        <p>Four wrong guesses and it's over. Can you keep your streak alive?</p>
+      </div>
+
+      <div class="card">
+        <div class="tag">April 2026</div>
+        <h2>Daily</h2>
+        <p>A new idiom every day. One shared challenge for everyone — compare your results.</p>
+      </div>
+
+    </section>
+
+    <!-- Feature highlights -->
+    <section class="grid" id="features">
+
+      <div class="card col-2">
+        <h2>Over 400 idioms across more than 60 languages</h2>
+        <p>
+          From Finnish to Swahili, Japanese to Portuguese — each idiom is a small
+          window into how a culture thinks. No translation is ever quite enough.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2>Leaderboards</h2>
+        <p>Compete globally in every mode via Game Center. See where you stand.</p>
+      </div>
+
+      <div class="card">
+        <h2>Achievements</h2>
+        <p>Unlock milestones for each mode as you explore, survive, and come back daily.</p>
+      </div>
+
+      <div class="card col-2">
+        <h2>No account needed</h2>
+        <p>
+          Just open the app and play. No sign-up, no tracking — your progress
+          stays on your device.
+        </p>
+      </div>
+
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> The Quiet Middle</div>
+      <div class="footer-links">
+        <a href="/idiomatics/privacy/">Privacy Policy</a>
+        <a href="/idiomatics/support/">Support</a>
+        <a href="/idiomatics/terms/">Terms of Service</a>
+      </div>
+    </footer>
+
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
