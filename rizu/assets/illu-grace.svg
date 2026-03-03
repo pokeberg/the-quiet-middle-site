@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 100" role="img" aria-label="Grace illustration">
+  <path d="M120 35c-9-13-26-21-44-19-24 2-42 20-40 40 2 22 25 36 49 31 8-2 15-6 20-12"
+        fill="none" stroke="#5FAF8B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M44 70c8 8 18 12 30 12 14 0 26-6 36-18"
+        fill="none" stroke="#BFE8D6" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+  <path d="M118 35c-1 8-4 14-10 18"
+        fill="none" stroke="#5FAF8B" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/>
+</svg>

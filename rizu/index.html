@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Rizu — One small thing a day</title>
+  <meta name="description" content="Rizu gives you one gentle daily task — small, doable, and oddly satisfying." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="/assets/favicon.png" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+</head>
+<body>
+  <header class="top">
+    <div class="brand">Rizu</div>
+    <nav class="nav">
+      <a href="/index.html">Home</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/support/">Support</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="card hero">
+      <h1>One small thing a day.</h1>
+      <p class="lead">
+        Rizu gives you one gentle daily task — small, doable, and oddly satisfying.
+        Build momentum without pressure.
+      </p>
+
+      <div class="buttons">
+       <a class="appstore" href="https://apps.apple.com/fi/app/rizu/id6756572985" aria-label="Download Rizu on the App Store">
+  <img src="assets/appstore-badge.svg" alt="Download on the App Store" />
+</a>
+    </section>
+
+    <section id="features" class="grid">
+      <div class="card">
+        <h2>One task a day</h2>
+        <p>No lists. No overwhelm. Just one tiny win.</p>
+      </div>
+      <div class="card">
+        <h2>Grace</h2>
+        <p>Not feeling today’s task? Shuffle it when you’ve earned Grace.</p>
+      </div>
+      <div class="card">
+        <h2>No streaks, just history</h2>
+        <p>See your progress build over time — quietly motivating.</p>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div>© <span id="year"></span> Rizu</div>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy Policy</a>
+      <a href="/support/">Support</a>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
